@@ -26,12 +26,19 @@ h2,
 h3,
 h4,
 ol,
-ul {
+ul,
+button {
     margin: 0;
 }
 
 h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 320px) {
+    h1 {
+        font-size: 1.75rem;
+    }
 }
 
 @media (min-width: 361px) {
@@ -90,11 +97,12 @@ body {
 
 .nav {
     width: 100%;
-    /* padding: 0 0.5rem; */
     display: flex;
     /* position: relative; */
     position: fixed;
     background: #eef3ed;
+
+    -webkit-box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
 }
 
@@ -109,10 +117,12 @@ body {
 }
 
 .nav-list {
-    /* padding: 0; */
     margin-left: auto;
     list-style-type: none;
     display: none;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -130,13 +140,22 @@ body {
     content: '';
     position: absolute;
     width: 100%;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
     transform: scaleX(0);
     height: 2px;
-    /* bottom: -4px; */
     left: 0;
     background-color: #1173a3;
+
+    -webkit-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
     transform-origin: bottom right;
+
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: -webkit-transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
     transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 .nav-list .link::after,
@@ -151,7 +170,12 @@ body {
 
 .link:hover::after,
 .link:focus::after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
+
+    -webkit-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
     transform-origin: bottom left;
 }
 
@@ -162,13 +186,19 @@ body {
 .active.link::after {
     width: 100%;
     height: 4px;
+
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
+
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
     transform-origin: bottom;
 }
 
 .menu-button {
     min-width: 90px;
-    height: 2.75rem;
+    height: 2.25rem;
     padding: 0.5rem 0.75rem;
     border: none;
     outline: none;
@@ -180,6 +210,12 @@ body {
     cursor: pointer;
 }
 
+@media (min-width: 320px) {
+    .menu-button {
+        height: 2.75rem;
+    }
+}
+
 @media (min-width: 361px) {
     .menu-button {
         height: 3rem;
@@ -188,6 +224,8 @@ body {
 
 @media (min-width: 600px) {
     .nav-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -200,18 +238,26 @@ body {
     position: absolute;
     right: 0;
     background: #eef4ee;
+    -webkit-box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+
+    -webkit-transform: translate3d(200px, 0, 0);
     transform: translate3d(200px, 0, 0);
+
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .menu-button.open + .nav-list--mobile {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
 .nav-list--mobile .menu-button {
     width: 100%;
-    /* height: 3rem; */
 }
 
 .nav-list--mobile.hidden-on-load {
@@ -219,7 +265,13 @@ body {
 }
 
 .main {
-    padding-top: 2.75rem;
+    padding-top: 2.25rem;
+}
+
+@media (min-width: 320px) {
+    .main {
+        padding-top: 2.75rem;
+    }
 }
 
 @media (min-width: 361px) {
@@ -236,11 +288,15 @@ body {
 
 .hero {
     height: 50vh;
-    background: center / cover no-repeat fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-box-shadow: inset 0 0 12px 0 rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 0 12px 0 rgba(0, 0, 0, 0.4);
 }
 
 .hero--mountain {
+    background-position: center;
     background-image: url('./img/mountain.jpg');
 }
 
@@ -262,36 +318,56 @@ body {
 
 .footer {
     padding: 2rem;
-    /* background: #555; */
-    /* color: #eef4ed; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .social {
     width: 7rem;
     padding-bottom: 1rem;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .social--link {
-    /* width: 3rem;
-    height: 3rem; */
     font-size: 0;
 }
 
 .social--link .svg {
-    /* fill: #eef4ed; */
     width: 3rem;
     height: 3rem;
     fill: #555;
+
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
+
+    -webkit-transition: fill 0.3s, -webkit-transform 0.3s;
+    transition: fill 0.3s, -webkit-transform 0.3s;
+    -o-transition: fill 0.3s, transform 0.3s;
     transition: fill 0.3s, transform 0.3s;
+    transition: fill 0.3s, transform 0.3s, -webkit-transform 0.3s;
 }
 
 .social--link:hover .svg {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
@@ -301,6 +377,8 @@ body {
 
 .stop {
     stop-color: #555;
+    -webkit-transition: stop-color 0.3s;
+    -o-transition: stop-color 0.3s;
     transition: stop-color 0.3s;
 }
 
@@ -336,12 +414,24 @@ body {
     border-radius: 50%;
     background: white;
     cursor: pointer;
+
+    -webkit-box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.3);
     box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.3);
+
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
+
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .scroll-up:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
@@ -351,10 +441,3 @@ body {
     position: relative;
     top: -2px;
 }
-
-/* @media (prefers-color-scheme: dark) {
-    body {
-        background: #555;
-        color: #eef4ed;
-    }
-} */
