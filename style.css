@@ -95,6 +95,10 @@ body {
     pointer-events: none;
 }
 
+.bold {
+    font-weight: 500;
+}
+
 .nav {
     width: 100%;
     display: flex;
@@ -106,7 +110,7 @@ body {
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     .nav {
         position: relative;
     }
@@ -222,7 +226,7 @@ body {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     .nav-list {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -280,7 +284,7 @@ body {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     .main {
         padding-top: 0;
     }
@@ -314,6 +318,39 @@ body {
     max-width: 50rem;
     padding: 1.5rem;
     margin: 0 auto;
+}
+
+.map-section::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.map {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border: 0;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (min-width: 600px) {
+    .map {
+        height: 400px;
+    }
+}
+
+@media (min-width: 767px) {
+    .map {
+        height: 500px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .map {
+        height: 600px;
+        margin-left: 0;
+    }
 }
 
 .footer {

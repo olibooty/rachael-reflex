@@ -25,11 +25,29 @@ function onClickScrollButton(e) {
 
     document.body.scrollTop = 0; // for safari
     document.documentElement.scrollTop = 0;
+
     window.location = '#';
 
     menuButton.classList.remove('open');
 }
 scrollUpButton.addEventListener('click', onClickScrollButton);
+
+function onLoad() {
+    // toggle active links on load
+    const link = navList.filter(function(el) {
+        return el.children[0].hash === window.location.hash;
+    })[0];
+
+    if (link) {
+        link.children[0].classList.add('active');
+    }
+
+    // hide transform: translate animation on load
+    setTimeout(function() {
+        document.querySelector('.nav-list--mobile').classList.remove('hidden-on-load');
+    }, 200);
+}
+window.addEventListener('load', onLoad);
 
 // show/ hide scroll button
 function onScroll() {
@@ -51,7 +69,9 @@ function onClick(e) {
     if (classes.contains('link')) {
         removeActiveClassFromLinks(navList);
         removeActiveClassFromLinks(navListMobile);
+
         classes.add('active');
+
         menuButton.classList.remove('open');
     }
     // toggle mobile menu
@@ -60,20 +80,3 @@ function onClick(e) {
     }
 }
 window.addEventListener('click', onClick);
-
-function onLoad() {
-    // toggle active links on load
-    const link = navList.filter(function(el) {
-        return el.children[0].hash === window.location.hash;
-    })[0];
-
-    if (link) {
-        link.children[0].classList.add('active');
-    }
-
-    // hide transform: translate animation on load
-    setTimeout(function() {
-        document.querySelector('.nav-list--mobile').classList.remove('hidden-on-load');
-    }, 200);
-}
-window.addEventListener('load', onLoad);
