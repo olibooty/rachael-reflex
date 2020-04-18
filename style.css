@@ -118,7 +118,7 @@ nav {
     width: 100%;
     display: flex;
     position: fixed;
-    background: #eef3ed;
+    background: #fefaf6;
 
     -webkit-box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
