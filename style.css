@@ -333,8 +333,8 @@ section {
 
 .iir-logo {
     max-width: 9rem;
-    margin: 0 1.5rem 1rem 0;
-    float: left;
+    margin: 0 0 1rem 1.5rem;
+    float: right;
 }
 
 .about--image {
