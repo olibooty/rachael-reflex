@@ -85,7 +85,7 @@ img {
 /* main site style */
 
 body {
-    background: #eef4ed;
+    background: #fefaf6;
     position: relative; /* ??? */
     overflow-x: hidden;
 }
@@ -221,7 +221,7 @@ nav h1 {
     display: block;
     background: #555;
     font-size: 1rem;
-    color: #eef4ed;
+    color: #fefaf6;
     cursor: pointer;
 }
 
@@ -252,7 +252,7 @@ nav h1 {
 .nav-list--mobile {
     position: absolute;
     right: 0;
-    background: #eef4ee;
+    background: #fefaf6;
     -webkit-box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.4);
 
