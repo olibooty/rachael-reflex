@@ -92,7 +92,7 @@ body {
 }
 
 a {
-    color: #1173a3;
+    color: #557647;
     text-decoration: none;
 }
 
@@ -161,7 +161,7 @@ nav h1 {
     transform: scaleX(0);
     height: 2px;
     left: 0;
-    background-color: #1173a3;
+    background-color: #557647;
 
     -webkit-transform-origin: bottom right;
     -ms-transform-origin: bottom right;
