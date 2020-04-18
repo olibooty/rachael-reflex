@@ -80,3 +80,10 @@ function onClick(e) {
     }
 }
 window.addEventListener('click', onClick);
+
+function onResize() {
+    if (window.innerWidth > 649) {
+        menuButton.classList.remove('open');
+    }
+}
+window.addEventListener('resize', onResize);
