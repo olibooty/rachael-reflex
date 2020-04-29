@@ -9,7 +9,7 @@ function hasClass(classList, className) {
 }
 
 function removeActiveClassFromLinks(navList) {
-    navList.forEach(function(el) {
+    navList.forEach(function (el) {
         el.children[0].classList.remove('active');
     });
 }
@@ -33,8 +33,13 @@ function onClickScrollButton(e) {
 scrollUpButton.addEventListener('click', onClickScrollButton);
 
 function onLoad() {
+    // check if iWhatever device a la https://stackoverflow.com/a/9039885
+    if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent) && !window.MSStream) {
+        document.querySelector('body').classList.add('is-apple-mobile');
+    }
+
     // toggle active links on load
-    const link = navList.filter(function(el) {
+    const link = navList.filter(function (el) {
         return el.children[0].hash === window.location.hash;
     })[0];
 
@@ -43,7 +48,7 @@ function onLoad() {
     }
 
     // hide transform: translate animation on load
-    setTimeout(function() {
+    setTimeout(function () {
         document.querySelector('.nav-list--mobile').classList.remove('hidden-on-load');
     }, 200);
 }
