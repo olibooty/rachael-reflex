@@ -93,7 +93,10 @@ img {
 
 body {
     background: #fefaf6;
-    position: relative; /* ??? */
+}
+
+.body-wrapper {
+    position: relative;
     overflow-x: hidden;
 }
 
