@@ -340,6 +340,48 @@ main {
     background-image: url('./img/Feet_Bill_Bradshaw_2.jpg');
 }
 
+@media (max-width: 800px) {
+    .hero--tor {
+        background-image: url('./img/tor@800.jpg');
+    }
+
+    .hero--hands {
+        background-image: url('./img/hands_2@800.jpg');
+    }
+
+    .hero--feet {
+        background-image: url('./img/Feet_Bill_Bradshaw_2@800.jpg');
+    }
+}
+
+@media (max-width: 600px) {
+    .hero--tor {
+        background-image: url('./img/tor@600.jpg');
+    }
+
+    .hero--hands {
+        background-image: url('./img/hands_2@600.jpg');
+    }
+
+    .hero--feet {
+        background-image: url('./img/Feet_Bill_Bradshaw_2@600.jpg');
+    }
+}
+
+@media (max-width: 400px) {
+    .hero--tor {
+        background-image: url('./img/tor@400.jpg');
+    }
+
+    .hero--hands {
+        background-image: url('./img/hands_2@400.jpg');
+    }
+
+    .hero--feet {
+        background-image: url('./img/Feet_Bill_Bradshaw_2@400.jpg');
+    }
+}
+
 section {
     max-width: 50rem;
     padding: 1.5rem;
