@@ -3,7 +3,7 @@ Rachael's Reflexology site - a single page HTML site. No fancy frameworks here!
 
 ### Todo
 
- - [ ] SEO
+ - [x] SEO
  - [ ] Make images responsive
- - [ ] Make menu/ nav accessible
- - [ ] Set up custom domain
+ - [x] Make menu/ nav accessible
+ - [x] Set up custom domain
