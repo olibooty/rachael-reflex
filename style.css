@@ -110,7 +110,6 @@ a {
 }
 
 .clearfix {
-    content: '';
     clear: both;
 }
 
