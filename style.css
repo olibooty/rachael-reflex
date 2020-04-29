@@ -420,7 +420,7 @@ section {
 }
 
 .footer {
-    padding: 2rem;
+    padding: 2rem 2rem 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
