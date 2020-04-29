@@ -327,20 +327,36 @@ main {
 
 .hero--tor {
     background-position: top 30% center;
-    background-image: url('./img/tor.jpg');
 }
 
 .hero--hands {
     background-position: center;
-    background-image: url('./img/hands_2.jpg');
 }
 
 .hero--feet {
     background-position: left 10% center;
-    background-image: url('./img/Feet_Bill_Bradshaw_2.jpg');
 }
 
-@media (max-width: 800px) {
+/*
+ * explicit window dimensions to ensure they only load when necessary
+ * maybe it's a bit extreme, but who's really gonna read this code? '__'
+ * https://stackoverflow.com/a/16961944
+*/
+@media (min-width: 801px) {
+    .hero--tor {
+        background-image: url('./img/tor.jpg');
+    }
+
+    .hero--hands {
+        background-image: url('./img/hands_2.jpg');
+    }
+
+    .hero--feet {
+        background-image: url('./img/Feet_Bill_Bradshaw_2.jpg');
+    }
+}
+
+@media (max-width: 800px), (min-width: 601px) {
     .hero--tor {
         background-image: url('./img/tor@800.jpg');
     }
@@ -354,7 +370,7 @@ main {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px), (min-width: 401px) {
     .hero--tor {
         background-image: url('./img/tor@600.jpg');
     }
