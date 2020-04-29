@@ -116,6 +116,8 @@ a {
 
 nav {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: fixed;
     background: #fefaf6;
@@ -304,6 +306,9 @@ main {
 
 .hero {
     height: 60vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -344,10 +349,13 @@ section {
     float: none;
 }
 
-@supports (object-fit: cover) and (object-position: 0) {
+@supports ((-o-object-fit: cover) or (object-fit: cover)) and
+    ((-o-object-position: 0) or (object-position: 0)) {
     .about--image {
         height: 400px;
+        -o-object-fit: cover;
         object-fit: cover;
+        -o-object-position: 0 10%;
         object-position: 0 10%;
     }
 
@@ -360,6 +368,7 @@ section {
     @media (min-width: 600px) {
         .about--image {
             height: auto;
+            -o-object-fit: initial;
             object-fit: initial;
         }
     }
