@@ -506,7 +506,7 @@ section {
 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .social--link {
@@ -516,6 +516,7 @@ section {
 .social--link .svg {
     width: 3rem;
     height: 3rem;
+    margin-right: -8px; /* fixes svg width not matching the a tag */
     fill: #555;
 
     -webkit-transform: scale(1);
@@ -537,33 +538,6 @@ section {
 
 .social--link:hover .svg--facebook {
     fill: #0087ca;
-}
-
-.stop {
-    stop-color: #555;
-    -webkit-transition: stop-color 0.3s;
-    -o-transition: stop-color 0.3s;
-    transition: stop-color 0.3s;
-}
-
-.social--link:hover .stop--first {
-    stop-color: #fdf497;
-}
-
-.social--link:hover .stop--second {
-    stop-color: #fdf497;
-}
-
-.social--link:hover .stop--third {
-    stop-color: #fd5949;
-}
-
-.social--link:hover .stop--fourth {
-    stop-color: #d6249f;
-}
-
-.social--link:hover .stop--fifth {
-    stop-color: #285aeb;
 }
 
 .scroll-up {
